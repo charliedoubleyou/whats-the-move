@@ -504,6 +504,14 @@ function App() {
   }
 
   useEffect(() => {
+    if (moveName?.trim()) {
+      document.title = `${moveName} | what's the move`;
+    } else {
+      document.title = "what's the move";
+    }
+  }, [moveName]);
+
+  useEffect(() => {
     clearMapRouteLines();
     setRouteSegments({});
     setRouteErrors({});
